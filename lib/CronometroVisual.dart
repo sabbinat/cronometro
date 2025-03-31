@@ -36,7 +36,7 @@ class CronometroVisual extends StatelessWidget {
                     value: progreso,
                     strokeWidth: 8,
                     backgroundColor: Colors.grey.shade300,
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                    valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF0AE6F8)),
                   ),
                 ),
                 Text(
@@ -86,7 +86,7 @@ class CronometroVisual extends StatelessWidget {
                 children: [
                   proveedor.corriendo
                       ? CircleAvatar(
-                    backgroundColor: Colors.deepPurple[900],
+                    backgroundColor: Color(0x4527A0FF),
                     radius: 30,
                     child: IconButton(
                       icon: Icon(Icons.stop, size: 20, color: Colors.white),
@@ -99,7 +99,8 @@ class CronometroVisual extends StatelessWidget {
                     backgroundColor: Colors.indigo[50],
                     radius: 45,
                     child: IconButton(
-                      icon: Icon(proveedor.corriendo ? Icons.pause : Icons.play_arrow, size: 30, color: Colors.blue[900]),
+                      icon: Icon(proveedor.corriendo ? Icons.pause : Icons.play_arrow, size: 30, color: Color(
+                          0xFF288895)),
                       onPressed: proveedor.cambiarCronometro,
                     ),
                   ),
@@ -107,7 +108,7 @@ class CronometroVisual extends StatelessWidget {
                   const SizedBox(width: 40),
                   proveedor.corriendo
                       ? CircleAvatar(
-                    backgroundColor: Colors.deepPurple[900],
+                    backgroundColor: Color(0x4527A0FF),
                     radius: 30,
                     child: IconButton(
                       icon: Icon(Icons.refresh, size: 20, color: Colors.white),
