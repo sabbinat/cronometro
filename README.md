@@ -1,5 +1,7 @@
 # Proyecto Cronómetro en Flutter
 
+![Image](https://github.com/user-attachments/assets/057494c1-d870-4d6c-b44c-8458d3c13e6e)
+
 Este es un proyecto simple de cronómetro desarrollado en Flutter. El cronómetro permite a los usuarios iniciar, pausar, detener, y agregar vueltas. El cronómetro muestra el tiempo transcurrido y permite realizar un seguimiento de las vueltas que el usuario agrega.
 
 ## Características
