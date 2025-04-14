@@ -1,5 +1,8 @@
 # Proyecto Cronómetro en Flutter - Branch notifications
 
+<img src="https://raw.githubusercontent.com/sabbinat/cronometro/notifications/gif.gif" alt="Cronómetro en acción" width="120"/>
+
+
 ## Mejoras en la Branch
 
 - Se añadieron widgets Semantics a los botones principales y a la visualización del cronómetro y las vueltas.
