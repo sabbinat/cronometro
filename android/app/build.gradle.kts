@@ -6,8 +6,8 @@ plugins {
 
 android {
     namespace = "com.example.cronometro"
-    compileSdk = 35  // Cambia esta línea con la versión que estás usando
-    ndkVersion = "29.0.13113456"  // Asegúrate de que esta versión esté instalada en tu Android SDK
+    compileSdk = 35
+    ndkVersion = "29.0.13113456"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -31,7 +31,7 @@ android {
 
     buildTypes {
         release {
-            signingConfig = signingConfigs.getByName("debug")  // Asegúrate de tener la configuración de firma
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
 }
@@ -43,7 +43,7 @@ dependencies {
 }
 
 flutter {
-    source = "../.."  // Esta es la configuración necesaria para Flutter
+    source = "../.."
 }
 
 

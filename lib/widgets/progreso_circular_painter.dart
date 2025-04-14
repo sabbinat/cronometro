@@ -17,15 +17,14 @@ class ProgresoCircularPainter extends CustomPainter {
     final radius = (size.width / 2) - (strokeWidth / 2);
 
     final fondoPaint = Paint()
-      ..color = const Color(0xFF1A1B44)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 6;
+      ..color = const Color(0xFF16162E)
+      ..style = PaintingStyle.fill;
 
     final progresoPaint = Paint()
       ..color = color
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round
-      ..strokeWidth = strokeWidth;
+      ..strokeWidth = 5;
 
     // Fondo
     canvas.drawCircle(center, radius, fondoPaint);

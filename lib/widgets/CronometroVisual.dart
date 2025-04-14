@@ -14,16 +14,19 @@ class CronometroVisual extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Cronómetro',
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        title: Padding(
+          padding: const EdgeInsets.only(top: 10.0),
+          child: const Text(
+            'Cronómetro',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
         ),
-        backgroundColor: const Color(0xFF121331),
+        backgroundColor: const Color(0xFF1D1D28),
         foregroundColor: Colors.white,
       ),
-      backgroundColor: const Color(0xFF121331),
+        backgroundColor: const Color(0xFF1D1D28),
       body: Padding(
-        padding: const EdgeInsets.only(top: 30),
+        padding: const EdgeInsets.only(top: 40),
         child: Column(
           children: [
             // Cronómetro visual
@@ -32,13 +35,24 @@ class CronometroVisual extends StatelessWidget {
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-                  SizedBox(
+                  Container(
                     width: 300,
                     height: 300,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0xFF02021F).withAlpha(77),
+                          blurRadius: 6,
+                          spreadRadius: 2,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
                     child: CustomPaint(
                       painter: ProgresoCircularPainter(
                         progreso: progreso,
-                        color: const Color(0xFF6C5CE7),
+                        color: const Color(0xFF29E2F1),
                         strokeWidth: 12,
                       ),
                     ),
@@ -59,19 +73,16 @@ class CronometroVisual extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 70.0),
                         child: Text(
-                         proveedor.centesimas,
-                         style: const TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.white,
+                          proveedor.centesimas,
+                          style: const TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
-
-                      )
-
                     ],
-                  )
-
+                  ),
                 ],
               ),
             ),
@@ -133,7 +144,7 @@ class CronometroVisual extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 40),
+            const SizedBox(height: 70),
 
             // Botones de control
             Padding(
@@ -141,7 +152,7 @@ class CronometroVisual extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  if (proveedor.corriendo)
+                  if (proveedor.corriendo || proveedor.pausado)
                     Semantics(
                       button: true,
                       enabled: proveedor.corriendo,
@@ -159,7 +170,7 @@ class CronometroVisual extends StatelessWidget {
                           ],
                         ),
                         child: CircleAvatar(
-                          backgroundColor: const Color(0xFF7441BD),
+                          backgroundColor: const Color(0xFF3B868C),
                           radius: 30,
                           child: IconButton(
                             tooltip: 'Detener cronómetro',
@@ -181,7 +192,7 @@ class CronometroVisual extends StatelessWidget {
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
-                            color: const Color(0xFF10112E),
+                            color: const Color.fromRGBO(0, 0, 0, 0.2),
                             blurRadius: 15,
                             spreadRadius: 1,
                             offset: const Offset(0, 2),
@@ -189,14 +200,14 @@ class CronometroVisual extends StatelessWidget {
                         ],
                       ),
                         child: CircleAvatar(
-                          backgroundColor: const Color(0xFFA079D6),
+                          backgroundColor: const Color(0xFF29E2F1),
                           radius: 50,
                           child: IconButton(
                             tooltip: proveedor.corriendo ? 'Pausar cronómetro' : 'Iniciar cronómetro',
                             icon: Icon(
                               proveedor.corriendo ? Icons.pause : Icons.play_arrow,
                               size: 40,
-                              color: Colors.white,
+                              color: Color(0xFF121331),
                             ),
                             onPressed: proveedor.cambiarCronometro,
                             iconSize: 40,
@@ -225,7 +236,7 @@ class CronometroVisual extends StatelessWidget {
                           ],
                         ),
                         child: CircleAvatar(
-                          backgroundColor: const Color(0xFF7441BD),
+                          backgroundColor: const Color(0xFF32767C),
                           radius: 30,
                           child: IconButton(
                             tooltip: 'Registrar vuelta',
